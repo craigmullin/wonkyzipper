@@ -3,7 +3,8 @@
 :root {
   --wz-red: #db0a28;
   --wz-pink: #ef6f9a;
-  --wz-plum: #3c1535;
+  /* --wz-plum: #3c1535; */
+  --wz-plum: #f0f0f0;
 
   /* Letter controls: adjust these to resize or reposition each letter. */
   /* --w-size: clamp(28rem, 59vw, 66rem);
