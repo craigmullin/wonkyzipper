@@ -6,12 +6,18 @@
   --wz-plum: #3c1535;
 
   /* Letter controls: adjust these to resize or reposition each letter. */
-  --w-size: clamp(28rem, 59vw, 66rem);
+  /* --w-size: clamp(28rem, 59vw, 66rem);
   --w-left: 50%;
   --w-top: -0.24em;
   --z-size: clamp(29rem, 61vw, 69rem);
   --z-left: 50%;
-  --z-top: 47svh;
+  --z-top: 47svh; */
+  --w-size: clamp(18rem, 49vw, 56rem);
+  --w-left: 40%;
+  --w-top: -0.30em;
+  --z-size: clamp(24rem, 56vw, 64rem);
+  --z-left: 35%;
+  --z-top: 35svh;
 }
 
 * {
