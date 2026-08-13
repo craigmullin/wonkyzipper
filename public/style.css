@@ -1,103 +1,94 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Mono:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@5..1200,900&display=swap");
 
 :root {
-  --pink: #d9006c;
-  --orange: #f35b21;
-  --ink: #252321;
-  --gutter: clamp(24px, 7.2vw, 112px);
+  --wz-red: #db0a28;
+  --wz-pink: #ef6f9a;
+  --wz-plum: #3c1535;
+
+  /* Letter controls: adjust these to resize or reposition each letter. */
+  --w-size: clamp(28rem, 59vw, 66rem);
+  --w-left: 50%;
+  --w-top: -0.24em;
+  --z-size: clamp(29rem, 61vw, 69rem);
+  --z-left: 50%;
+  --z-top: 47svh;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html, body { min-height: 100%; }
-
+html,
 body {
-  min-width: 320px;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  overflow: hidden;
+}
+
+.wz-hero {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.wz-hero__left {
+  min-width: 0;
+  background: var(--wz-red);
+}
+
+.wz-hero__right {
+  min-width: 0;
+  background: var(--wz-pink);
+}
+
+.wz-hero__letter-strip {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
   background: #fff;
-  color: var(--ink);
 }
 
-.masthead {
-  position: relative;
-  z-index: 0;
-  height: 172px;
-  background-color: #fffafd;
-  background-image:
-    linear-gradient(rgb(255 255 255 / 78%), rgb(255 255 255 / 78%)),
-    url("assets/pink-plaid.png");
-  background-repeat: repeat;
-  background-size: 238px auto;
-}
-
-.wordmark {
+.wz-letter {
   position: absolute;
-  top: 34px;
-  right: var(--gutter);
-  color: var(--pink);
-  font-family: "DM Mono", monospace;
-  font-size: clamp(0.66rem, 0.78vw, 0.78rem);
-  font-weight: 400;
-  letter-spacing: 0.18em;
-  line-height: 1;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.page {
-  position: relative;
-  min-height: calc(100svh - 172px);
-  padding: 1px var(--gutter) 42px;
-}
-
-.mark {
-  position: absolute;
-  z-index: 2;
-  top: clamp(-18px, -1.25vw, -10px);
-  left: var(--gutter);
   display: block;
-  width: clamp(285px, 28vw, 390px);
-  height: auto;
+  color: var(--wz-plum);
+  font-family: Didot, "Bodoni MT", "Bodoni 72", "Playfair Display", Georgia, serif;
+  font-weight: 900;
+  line-height: 0.72;
+  letter-spacing: -0.14em;
+  white-space: nowrap;
+  user-select: none;
 }
 
-.tagline {
-  position: absolute;
-  bottom: clamp(76px, 15vh, 156px);
-  left: var(--gutter);
-  margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2rem, 3.25vw, 3.35rem);
-  font-weight: 400;
-  letter-spacing: -0.04em;
-  line-height: 0.96;
+.wz-letter--w {
+  top: var(--w-top);
+  left: var(--w-left);
+  transform: translateX(-50%);
+  font-size: var(--w-size);
 }
 
-.dot {
-  display: inline-block;
-  margin-left: 0.02em;
-  color: var(--orange);
-  font-size: 0.48em;
-  line-height: 1;
-  transform: translateY(-0.10em);
+.wz-letter--z {
+  top: var(--z-top);
+  left: var(--z-left);
+  transform: translateX(-50%);
+  font-size: var(--z-size);
 }
 
-.footer {
-  position: absolute;
-  right: var(--gutter);
-  bottom: 29px;
-  margin: 0;
-  color: var(--pink);
-  font: 0.57rem/1 "DM Mono", monospace;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+@media (max-width: 700px) {
+  :root {
+    --w-size: max(82vw, 74svh);
+    --w-left: 50%;
+    --w-top: -0.1em;
+    --z-size: max(86vw, 80svh);
+    --z-left: 50%;
+    --z-top: 43svh;
+  }
 
-@media (max-width: 640px) {
-  :root { --gutter: 22px; }
-  .masthead { height: 126px; background-size: 178px auto; }
-  .wordmark { top: 23px; font-size: 0.58rem; letter-spacing: 0.13em; }
-  .page { min-height: calc(100svh - 126px); }
-  .mark { top: -11px; width: min(82vw, 330px); }
-  .tagline { bottom: 82px; font-size: clamp(2rem, 10.5vw, 2.7rem); }
-  .footer { bottom: 24px; }
+  .wz-hero {
+    grid-template-columns: 28vw 44vw 28vw;
+  }
 }
