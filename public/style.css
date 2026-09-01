@@ -1,26 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:opsz,wght@5..1200,900&display=swap");
-
-:root {
-  --wz-red: #db0a28;
-  --wz-pink: #ef6f9a;
-  /* --wz-plum: #3c1535; */
-  --wz-plum: #f0f0f0;
-
-  /* Letter controls: adjust these to resize or reposition each letter. */
-  /* --w-size: clamp(28rem, 59vw, 66rem);
-  --w-left: 50%;
-  --w-top: -0.24em;
-  --z-size: clamp(29rem, 61vw, 69rem);
-  --z-left: 50%;
-  --z-top: 47svh; */
-  --w-size: clamp(18rem, 49vw, 56rem);
-  --w-left: 40%;
-  --w-top: -0.30em;
-  --z-size: clamp(24rem, 56vw, 64rem);
-  --z-left: 35%;
-  --z-top: 35svh;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -30,72 +7,27 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  overflow: hidden;
+}
+
+body {
+  background: #eb417b;
 }
 
 .wz-hero {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: 100vw;
+  place-items: center;
+  width: 100%;
   height: 100vh;
   height: 100svh;
-  overflow: hidden;
+  /* Palette-colored margins preserve the complete portrait on wide screens. */
+  background: linear-gradient(to right, #bc0007 0%, #bc0007 50%, #eb417b 50%, #eb417b 100%);
 }
 
-.wz-hero__left {
-  min-width: 0;
-  background: var(--wz-red);
-}
-
-.wz-hero__right {
-  min-width: 0;
-  background: var(--wz-pink);
-}
-
-.wz-hero__letter-strip {
-  position: relative;
-  min-width: 0;
-  overflow: hidden;
-  background: #fff;
-}
-
-.wz-letter {
-  position: absolute;
+.wz-hero__artwork {
   display: block;
-  color: var(--wz-plum);
-  font-family: Didot, "Bodoni MT", "Bodoni 72", "Playfair Display", Georgia, serif;
-  font-weight: 900;
-  line-height: 0.72;
-  letter-spacing: -0.14em;
-  white-space: nowrap;
-  user-select: none;
-}
-
-.wz-letter--w {
-  top: var(--w-top);
-  left: var(--w-left);
-  transform: translateX(-50%);
-  font-size: var(--w-size);
-}
-
-.wz-letter--z {
-  top: var(--z-top);
-  left: var(--z-left);
-  transform: translateX(-50%);
-  font-size: var(--z-size);
-}
-
-@media (max-width: 700px) {
-  :root {
-    --w-size: max(82vw, 74svh);
-    --w-left: 50%;
-    --w-top: -0.1em;
-    --z-size: max(86vw, 80svh);
-    --z-left: 50%;
-    --z-top: 43svh;
-  }
-
-  .wz-hero {
-    grid-template-columns: 28vw 44vw 28vw;
-  }
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: contain;
 }
