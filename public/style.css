@@ -7,27 +7,20 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-}
-
-body {
-  background: #eb417b;
+  overflow: hidden;
 }
 
 .wz-hero {
-  display: grid;
-  place-items: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  height: 100svh;
-  /* Palette-colored margins preserve the complete portrait on wide screens. */
-  background: linear-gradient(to right, #bc0007 0%, #bc0007 50%, #eb417b 50%, #eb417b 100%);
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .wz-hero__artwork {
   display: block;
   width: 100%;
   height: 100%;
-  min-width: 0;
-  min-height: 0;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
 }
