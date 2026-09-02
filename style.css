@@ -24,3 +24,10 @@ body {
   object-fit: cover;
   object-position: center;
 }
+
+/* Wide screens need a higher crop to keep the wordmark in view. */
+@media (orientation: landscape) {
+  .wz-hero__artwork {
+    object-position: center 25%;
+  }
+}
